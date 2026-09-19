@@ -6,7 +6,7 @@
   <title>DeepAutomation | Automatización Inteligente & Flujos con IA</title>
   <meta name="description" content="Automatiza procesos complejos, agentes de IA y flujos de trabajo con DeepAutomation. Escala tu empresa en piloto automático." />
 
-  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -27,7 +27,6 @@
               border: '#1f293d',
               blue: '#2563eb',
               cyan: '#38bdf8',
-              glow: '#3b82f6',
             }
           }
         }
@@ -39,7 +38,6 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* Efecto de fondo cuadriculado moderno */
     .bg-grid {
       background-size: 40px 40px;
       background-image: 
@@ -49,24 +47,20 @@
     .blue-glow {
       box-shadow: 0 0 50px -10px rgba(37, 99, 235, 0.35);
     }
-    .neon-border {
-      border: 1px solid rgba(59, 130, 246, 0.25);
-    }
   </style>
 </head>
 
 <body class="bg-brand-black text-slate-200 antialiased selection:bg-brand-blue selection:text-white relative overflow-x-hidden">
 
-  <!-- Background radial glow lights -->
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-600/15 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-  <div class="fixed bottom-0 right-0 w-[500px] h-[300px] bg-sky-500/10 blur-[140px] rounded-full pointer-events-none -z-10"></div>
+  <!-- Glows de fondo -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-blue-600/15 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+  <div class="fixed bottom-0 right-0 w-[450px] h-[300px] bg-sky-500/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
 
   <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-brand-black/75 border-b border-brand-border">
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-brand-black/80 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-cyan-400 p-[1px] blue-glow transition-transform group-hover:scale-105">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-cyan-400 p-[1px] blue-glow">
           <div class="w-full h-full bg-brand-black rounded-[11px] flex items-center justify-center">
             <i data-lucide="cpu" class="w-5 h-5 text-cyan-400"></i>
           </div>
@@ -76,7 +70,6 @@
         </span>
       </a>
 
-      <!-- Desktop Links -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#soluciones" class="hover:text-white transition">Soluciones</a>
         <a href="#caracteristicas" class="hover:text-white transition">Características</a>
@@ -84,66 +77,68 @@
         <a href="#integraciones" class="hover:text-white transition">Integraciones</a>
       </nav>
 
-      <!-- CTA Button -->
+      <!-- Botón WhatsApp Navbar -->
       <div class="hidden md:flex items-center gap-4">
-        <a href="https://wa.me/?text=Hola%20DeepAutomation,%20quiero%20automatizar%20mis%20procesos" target="_blank"
+        <a href="https://wa.me/51907054616?text=Hola%20DeepAutomation,%20quiero%20agendar%20una%20demo%20de%20automatizaci%C3%B3n" 
+           target="_blank" rel="noopener noreferrer"
            class="px-5 py-2.5 rounded-lg text-sm font-semibold bg-brand-blue hover:bg-blue-500 text-white transition-all shadow-lg shadow-blue-600/30 flex items-center gap-2">
           <span>Agendar Demo</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
       </div>
 
-      <!-- Mobile menu button -->
-      <button id="menu-btn" class="md:hidden text-slate-400 hover:text-white">
+      <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
 
-    <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 bg-brand-black border-b border-brand-border flex-col gap-4 text-sm font-medium">
-      <a href="#soluciones" class="text-slate-300 hover:text-white">Soluciones</a>
-      <a href="#caracteristicas" class="text-slate-300 hover:text-white">Características</a>
-      <a href="#proceso" class="text-slate-300 hover:text-white">Cómo funciona</a>
-      <a href="https://wa.me/?text=Hola%20DeepAutomation" class="w-full text-center py-2.5 rounded-lg bg-brand-blue text-white font-semibold">Agendar Demo</a>
+    <!-- Menú Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 bg-brand-black border-b border-brand-border flex flex-col gap-4 text-sm font-medium">
+      <a href="#soluciones" class="text-slate-300 hover:text-white py-1">Soluciones</a>
+      <a href="#caracteristicas" class="text-slate-300 hover:text-white py-1">Características</a>
+      <a href="#proceso" class="text-slate-300 hover:text-white py-1">Cómo funciona</a>
+      <a href="https://wa.me/51907054616?text=Hola%20DeepAutomation,%20quiero%20agendar%20una%20demo" 
+         target="_blank" rel="noopener noreferrer"
+         class="w-full text-center py-3 rounded-lg bg-brand-blue text-white font-semibold flex items-center justify-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span>Agendar Demo por WhatsApp</span>
+      </a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="relative pt-36 pb-20 md:pt-44 md:pb-28 bg-grid">
     <div class="max-w-6xl mx-auto px-6 text-center">
       
-      <!-- Chip pill -->
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-8">
         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
         Nueva generación de automatización empresarial
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
         Escala las operaciones de tu empresa en <br class="hidden sm:inline" />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-white">
           piloto automático
         </span>
       </h1>
 
-      <!-- Subtitle -->
-      <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-400 mb-10 leading-relaxed font-light">
+      <p class="max-w-2xl mx-auto text-base sm:text-xl text-slate-400 mb-10 leading-relaxed font-light">
         Diseñamos e implementamos sistemas de automatización con IA, agentes virtuales y flujos de trabajo sin fricción. Ahorra más de 40 horas al mes por cada colaborador.
       </p>
 
-      <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="#soluciones" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white text-brand-black hover:bg-slate-200 transition shadow-xl">
           Explorar Soluciones
         </a>
-        <a href="https://wa.me/?text=Hola%20DeepAutomation,%20quiero%20automatizar%20mis%20procesos" target="_blank"
+        <a href="https://wa.me/51907054616?text=Hola%20DeepAutomation,%20quiero%20conversar%20con%20un%20experto%20sobre%20mi%20negocio" 
+           target="_blank" rel="noopener noreferrer"
            class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold border border-brand-border bg-brand-surface/70 hover:bg-brand-surface text-white transition flex items-center justify-center gap-2">
-          <span>Hablar con un Experto</span>
+          <span>Hablar por WhatsApp</span>
           <i data-lucide="message-square" class="w-4 h-4 text-cyan-400"></i>
         </a>
       </div>
 
-      <!-- Hero Dashboard Mockup Preview -->
+      <!-- Mockup Engine -->
       <div class="mt-16 rounded-2xl p-2 bg-gradient-to-b from-blue-500/20 to-transparent border border-brand-border blue-glow">
         <div class="bg-brand-surface rounded-xl p-6 sm:p-8 text-left border border-white/5">
           <div class="flex items-center justify-between border-b border-brand-border pb-4 mb-6">
@@ -151,10 +146,10 @@
               <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
               <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
               <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-              <span class="ml-2 text-xs font-mono text-slate-400">deep-automation-engine v2.4</span>
+              <span class="ml-2 text-xs font-mono text-slate-400">deep-automation-core v2.4</span>
             </div>
             <span class="text-xs px-2.5 py-1 rounded bg-green-500/10 text-green-400 font-mono flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Activo 24/7
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Operativo 24/7
             </span>
           </div>
 
@@ -163,18 +158,18 @@
               <p class="text-xs text-slate-400 mb-1">Tareas Ejecutadas Hoy</p>
               <h3 class="text-2xl font-bold text-white">14,290</h3>
               <p class="text-xs text-cyan-400 mt-1 flex items-center gap-1">
-                <i data-lucide="trending-up" class="w-3 h-3"></i> +34% vs ayer
+                <i data-lucide="trending-up" class="w-3 h-3"></i> +34% eficiencia
               </p>
             </div>
             <div class="bg-brand-black/60 p-4 rounded-lg border border-brand-border">
               <p class="text-xs text-slate-400 mb-1">Tiempo de Respuesta</p>
               <h3 class="text-2xl font-bold text-white">0.32 seg</h3>
               <p class="text-xs text-emerald-400 mt-1 flex items-center gap-1">
-                <i data-lucide="zap" class="w-3 h-3"></i> Inmediato
+                <i data-lucide="zap" class="w-3 h-3"></i> En tiempo real
               </p>
             </div>
             <div class="bg-brand-black/60 p-4 rounded-lg border border-brand-border">
-              <p class="text-xs text-slate-400 mb-1">Horas Hombre Ahorradas</p>
+              <p class="text-xs text-slate-400 mb-1">Horas Ahorradas</p>
               <h3 class="text-2xl font-bold text-white">320 hrs</h3>
               <p class="text-xs text-blue-400 mt-1 flex items-center gap-1">
                 <i data-lucide="check-circle-2" class="w-3 h-3"></i> Este mes
@@ -187,67 +182,66 @@
     </div>
   </section>
 
-  <!-- TRUST LOGOS / INTEGRATIONS -->
+  <!-- INTEGRACIONES -->
   <section id="integraciones" class="py-12 border-y border-brand-border bg-brand-surface/30">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <p class="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-6">
-        Automatizamos y conectamos todo tu ecosistema digital
+        Conectamos todo tu ecosistema empresarial
       </p>
-      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 text-slate-400 text-sm font-mono opacity-80">
-        <span class="hover:text-white transition">⚡ OpenAI / Claude</span>
-        <span class="hover:text-white transition">💬 WhatsApp Business API</span>
-        <span class="hover:text-white transition">🔄 Make & Zapier</span>
-        <span class="hover:text-white transition">📊 HubSpot & Salesforce</span>
-        <span class="hover:text-white transition">💳 Stripe & PayPal</span>
-        <span class="hover:text-white transition">📁 Google Workspace</span>
+      <div class="flex flex-wrap items-center justify-center gap-6 md:gap-14 text-slate-400 text-sm font-mono opacity-80">
+        <span>⚡ OpenAI & Claude</span>
+        <span>💬 WhatsApp Business API</span>
+        <span>🔄 Make / Zapier</span>
+        <span>📊 CRM (HubSpot, Zoho)</span>
+        <span>💳 Stripe & Pasarelas</span>
+        <span>📁 Google Cloud</span>
       </div>
     </div>
   </section>
 
-  <!-- SOLUTIONS / SERVICES -->
+  <!-- SERVICIOS -->
   <section id="soluciones" class="py-24 max-w-7xl mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <h2 class="text-xs uppercase font-bold tracking-widest text-cyan-400 mb-2">Servicios Clave</h2>
       <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-        Todo lo que necesitas para automatizar tu negocio
+        Sistemas hechos a la medida de tu negocio
       </h3>
       <p class="text-slate-400 mt-4 text-base">
-        Elimina el trabajo repetitivo y enfoca a tu equipo en lo que realmente genera ventas y crecimiento.
+        Elimina el trabajo manual repetitivo y permite que tu equipo se concentre en cerrar clientes.
       </p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      
       <!-- Card 1 -->
       <div class="bg-brand-surface/70 border border-brand-border hover:border-blue-500/50 transition-all rounded-2xl p-8 hover:-translate-y-1">
         <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-cyan-400 flex items-center justify-center mb-6">
           <i data-lucide="bot" class="w-6 h-6"></i>
         </div>
-        <h4 class="text-xl font-bold text-white mb-3">Agentes de IA y Chatbots</h4>
+        <h4 class="text-xl font-bold text-white mb-3">Agentes de IA & WhatsApp</h4>
         <p class="text-slate-400 text-sm leading-relaxed mb-6">
-          Asistentes conversacionales inteligentes que atienden y califican prospectos en WhatsApp, web y redes 24/7 de forma humana.
+          Asistentes entrenados con la información de tu empresa para atender prospectos, resolver dudas y agendar citas 24/7 sin descanso.
         </p>
         <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
           <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Calificación automática de leads</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Agendamiento directo en Calendar</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Integración a Google Calendar</li>
         </ul>
       </div>
 
       <!-- Card 2 -->
       <div class="bg-brand-surface/70 border border-brand-border hover:border-blue-500/50 transition-all rounded-2xl p-8 hover:-translate-y-1 relative">
         <div class="absolute -top-3 right-6 px-3 py-1 bg-brand-blue text-white font-mono text-[10px] font-bold rounded-full">
-          MÁS SOLICITADO
+          POPULAR
         </div>
         <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-cyan-400 flex items-center justify-center mb-6">
           <i data-lucide="git-branch" class="w-6 h-6"></i>
         </div>
-        <h4 class="text-xl font-bold text-white mb-3">Flujos de Trabajo Complejos</h4>
+        <h4 class="text-xl font-bold text-white mb-3">Flujos de Trabajo Conectados</h4>
         <p class="text-slate-400 text-sm leading-relaxed mb-6">
-          Conectamos tus sistemas (CRM, Facturación, Inventario, Email) para que los datos fluyan al instante sin intervención manual.
+          Sincroniza tus bases de datos, correos, hojas de cálculo y sistemas contables para que la información viaje sola y sin errores.
         </p>
         <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Sincronización en tiempo real</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Alertas y reportes automatizados</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Cero copiado y pegado manual</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Notificaciones instantáneas al equipo</li>
         </ul>
       </div>
 
@@ -256,60 +250,60 @@
         <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-cyan-400 flex items-center justify-center mb-6">
           <i data-lucide="file-text" class="w-6 h-6"></i>
         </div>
-        <h4 class="text-xl font-bold text-white mb-3">Extracción & OCR Inteligente</h4>
+        <h4 class="text-xl font-bold text-white mb-3">Lectura y Extracción con IA</h4>
         <p class="text-slate-400 text-sm leading-relaxed mb-6">
-          Lectura y procesamiento de facturas, PDFs, tickets y correos mediante modelos de lenguaje para cargar datos directo a tu ERP.
+          Extracción inteligente de datos desde documentos, facturas, contratos o correos electrónicos directo a tus sistemas de gestión.
         </p>
         <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Cero error de digitación humana</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Compatibilidad con múltiples formatos</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Detección y clasificación automática</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Reportes semanales en automático</li>
         </ul>
       </div>
-
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- PROCESO -->
   <section id="proceso" class="py-20 bg-brand-surface/20 border-t border-brand-border">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-xs uppercase font-bold tracking-widest text-cyan-400 mb-2">Paso a paso</h2>
+        <h2 class="text-xs uppercase font-bold tracking-widest text-cyan-400 mb-2">Metodología</h2>
         <h3 class="text-3xl font-extrabold text-white">¿Cómo empezamos a trabajar?</h3>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center md:text-left">
+        <div>
           <span class="text-5xl font-extrabold text-blue-500/30 font-mono">01</span>
-          <h4 class="text-lg font-bold text-white mt-2 mb-2">Auditoría Operativa</h4>
-          <p class="text-sm text-slate-400">Analizamos tus cuellos de botella y procesos manuales que queman tiempo y dinero en tu equipo.</p>
+          <h4 class="text-lg font-bold text-white mt-2 mb-2">Diagnóstico Inicial</h4>
+          <p class="text-sm text-slate-400">Analizamos tus procesos actuales y detectamos las tareas repetitivas que más tiempo consumen.</p>
         </div>
-        <div class="text-center md:text-left">
+        <div>
           <span class="text-5xl font-extrabold text-cyan-400/30 font-mono">02</span>
-          <h4 class="text-lg font-bold text-white mt-2 mb-2">Desarrollo & Configuración</h4>
-          <p class="text-sm text-slate-400">Construimos la arquitectura de automatización e integramos tus herramientas con APIs seguras.</p>
+          <h4 class="text-lg font-bold text-white mt-2 mb-2">Arquitectura & Conexión</h4>
+          <p class="text-sm text-slate-400">Construimos la solución, conectamos las APIs y probamos cada escenario de automatización.</p>
         </div>
-        <div class="text-center md:text-left">
+        <div>
           <span class="text-5xl font-extrabold text-white/30 font-mono">03</span>
-          <h4 class="text-lg font-bold text-white mt-2 mb-2">Despliegue y Supervisión</h4>
-          <p class="text-sm text-slate-400">Lanzamos los flujos en producción y monitoreamos su rendimiento y fiabilidad constantemente.</p>
+          <h4 class="text-lg font-bold text-white mt-2 mb-2">Lanzamiento & Soporte</h4>
+          <p class="text-sm text-slate-400">Desplegamos los flujos en tu empresa y capacitamos a tu equipo para maximizar los resultados.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
+  <!-- CTA FINAL WHATSAPP -->
   <section class="py-20 max-w-5xl mx-auto px-6">
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-900/60 to-brand-surface border border-blue-500/40 p-10 md:p-14 text-center blue-glow">
       <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-        ¿Listo para transformar la eficiencia de tu equipo?
+        ¿Listo para optimizar tu tiempo?
       </h3>
       <p class="text-slate-300 max-w-xl mx-auto mb-8 text-sm sm:text-base">
-        Agenda una llamada de diagnóstico de 20 minutos sin compromiso y te mostraremos qué procesos puedes automatizar de inmediato.
+        Escríbenos directamente por WhatsApp y revisemos juntos cómo aplicar IA y automatización en tu negocio hoy mismo.
       </p>
-      <a href="https://wa.me/?text=Hola%20DeepAutomation,%20quiero%20agendar%20mi%20diagn%C3%B3stico" target="_blank"
-         class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold bg-white text-brand-black hover:bg-slate-200 transition shadow-xl">
-        <span>Agendar Sesión de Diagnóstico</span>
-        <i data-lucide="calendar" class="w-4 h-4"></i>
+      <a href="https://wa.me/51907054616?text=Hola%20DeepAutomation,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico%20gratuita" 
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl font-bold bg-white text-brand-black hover:bg-slate-200 transition shadow-xl">
+        <i data-lucide="message-circle" class="w-5 h-5 text-emerald-600"></i>
+        <span>Chatear por WhatsApp (+51 907 054 616)</span>
       </a>
     </div>
   </section>
@@ -322,30 +316,22 @@
         <span>DeepAutomation</span>
       </div>
       <p class="text-xs">
-        &copy; <span id="year"></span> DeepAutomation AI. Todos los derechos reservados.
+        &copy; <span id="year"></span> DeepAutomation AI. Lima, Perú.
       </p>
       <div class="flex gap-6 text-xs">
-        <a href="#" class="hover:text-white transition">Privacidad</a>
-        <a href="#" class="hover:text-white transition">Términos</a>
+        <a href="https://wa.me/51907054616" target="_blank" class="hover:text-white transition">WhatsApp</a>
         <a href="https://github.com/erick-deepautomation" target="_blank" class="hover:text-white transition">GitHub</a>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Iniciar Lucide Icons
     lucide.createIcons();
-
-    // Año actual automático
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('flex');
     });
   </script>
 </body>
