@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepAutomation AI — Automatización inteligente con IA</title>
+<meta name="description" content="DeepAutomation AI automatiza todo tipo de tareas con IA, usando los modelos más eficientes y especializados del mercado para cada situación.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0A0A'/%3E%3Cpath d='M16 5 27 11v10l-11 6-11-6V11z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M16 11 21.5 14v4L16 21l-5.5-3v-4z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0A0A0A;--surface:#111111;--raised:#1A1A1A;
+  --text:#FFFFFF;--muted:rgba(255,255,255,.64);--dim:rgba(255,255,255,.42);
+  --line:rgba(255,255,255,.12);--line-strong:rgba(255,255,255,.28);
+  --max:1120px;--r:8px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.6 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+.label{font:500 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:12px}
+.label::before{content:"";width:24px;height:1px;background:var(--line-strong)}
+h1,h2,h3{font-weight:600;letter-spacing:-.025em;line-height:1.1}
+h2{font-size:clamp(30px,4vw,44px);margin-top:20px}
+.lead{color:var(--muted);font-size:18px;max-width:620px}
+
+/* Nav */
+header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:-.01em}
+.brand svg{width:28px;height:28px}
+.brand span{color:var(--dim);font-weight:500}
+.links{display:flex;gap:32px;font-size:14px;color:var(--muted)}
+.links a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:0 22px;border-radius:var(--r);font-size:15px;font-weight:500;border:1px solid var(--line-strong);transition:background .2s,color .2s,border-color .2s}
+.btn:hover{border-color:#fff}
+.btn-solid{background:#fff;color:#0A0A0A;border-color:#fff}
+.btn-solid:hover{background:transparent;color:#fff}
+.btn svg{width:16px;height:16px}
+
+/* Hero */
+.hero{position:relative;padding:120px 0 104px;border-bottom:1px solid var(--line);overflow:hidden}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 80% at 70% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 70% 40%,#000 20%,transparent 75%);opacity:.55}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6vw,68px);margin:24px 0}
+.hero h1 em{font-style:normal;color:var(--dim)}
+.hero .lead{margin-bottom:40px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.geo{width:100%;max-width:420px;justify-self:end;aspect-ratio:1}
+.geo .spin{transform-origin:200px 200px;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.geo .spin{animation:none}html{scroll-behavior:auto}}
+
+/* Stats strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.stat{padding:32px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:28px;font-weight:600;letter-spacing:-.02em}
+.stat small{color:var(--dim);font-size:14px}
+
+section{padding:112px 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px}
+
+/* Differentiator */
+.diff{border-bottom:1px solid var(--line)}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.diff-card{padding:40px 32px;border-right:1px solid var(--line);background:var(--surface);transition:background .25s}
+.diff-card:last-child{border-right:0}
+.diff-card:hover{background:var(--raised)}
+.num{font:500 13px/1 var(--mono);color:var(--dim)}
+.ico{width:44px;height:44px;margin:32px 0 24px;stroke:#fff;fill:none;stroke-width:1.25}
+.diff-card h3{font-size:20px;margin-bottom:12px}
+.diff-card p{color:var(--muted);font-size:15px}
+
+/* Model radar */
+.radar{background:var(--surface);border-bottom:1px solid var(--line)}
+.radar .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.radar .lead{margin-top:24px}
+.checks{list-style:none;margin-top:32px;display:grid;gap:14px}
+.checks li{display:flex;gap:14px;color:var(--muted)}
+.checks li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;background:#fff;transform:rotate(45deg)}
+.table{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg);font-size:14px}
+.table-head{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid var(--line);font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.live{display:flex;align-items:center;gap:8px}
+.live i{width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.row{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:16px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .t{font-weight:500}
+.row .s{color:var(--dim);font-size:13px}
+.bar{height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.bar span{display:block;height:100%;background:#fff}
+.tag{justify-self:start;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border:1px solid var(--line-strong);border-radius:4px;color:var(--muted)}
+
+/* Services */
+.services{border-bottom:1px solid var(--line)}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.svc{background:var(--bg);padding:40px;display:grid;grid-template-columns:48px 1fr;gap:24px}
+.svc svg{width:40px;height:40px;stroke:#fff;fill:none;stroke-width:1.25}
+.svc h3{font-size:19px;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:15px}
+
+/* Segments */
+.seg-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.seg{border:1px solid var(--line);border-radius:12px;padding:48px;position:relative;overflow:hidden}
+.seg::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border:1px solid var(--line);transform:rotate(45deg)}
+.seg h3{font-size:26px;margin:20px 0 16px}
+.seg p{color:var(--muted);margin-bottom:24px}
+.seg ul{list-style:none;display:grid;gap:10px;font-size:15px;color:var(--muted)}
+.seg li{padding-top:10px;border-top:1px solid var(--line)}
+
+/* Process */
+.process{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.steps::before{content:"";position:absolute;top:22px;left:22px;right:22px;height:1px;background:var(--line-strong)}
+.step{position:relative;padding-right:24px}
+.dot{width:44px;height:44px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line-strong);transform:rotate(45deg);margin-bottom:32px}
+.dot span{transform:rotate(-45deg);font:500 13px var(--mono)}
+.step h3{font-size:18px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+
+/* Contact */
+.contact .box{border:1px solid var(--line);border-radius:12px;display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden}
+.contact .l{padding:64px}
+.contact .l h2{margin-bottom:20px}
+.contact .r{border-left:1px solid var(--line);display:grid}
+.channel{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:32px 40px;border-bottom:1px solid var(--line);transition:background .2s}
+.channel:last-child{border-bottom:0}
+.channel:hover{background:var(--raised)}
+.channel small{display:block;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.channel b{font-weight:500;font-size:17px;word-break:break-word}
+.channel svg{flex:none;width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.5;transition:transform .2s}
+.channel:hover svg{transform:translate(3px,-3px)}
+
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .links{display:none}
+  .hero{padding:80px 0 72px}
+  .hero .wrap,.radar .wrap,.sec-head,.contact .box{grid-template-columns:1fr}
+  .geo{justify-self:center;max-width:300px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .diff-grid,.svc-grid,.seg-grid{grid-template-columns:1fr}
+  .diff-card{border-right:0;border-bottom:1px solid var(--line)}
+  .diff-card:last-child{border-bottom:0}
+  .steps{grid-template-columns:1fr 1fr;gap:48px 24px}
+  .steps::before{display:none}
+  .contact .r{border-left:0;border-top:1px solid var(--line)}
+  section{padding:80px 0}
+  .sec-head{margin-bottom:40px;gap:20px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 20px}
+  .nav .btn{display:none}
+  .stat{padding:24px 20px}
+  .stat b{font-size:22px}
+  .svc{padding:28px;grid-template-columns:1fr;gap:16px}
+  .seg,.contact .l{padding:32px 24px}
+  .channel{padding:24px}
+  .steps{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr 1fr;padding:16px 20px}
+  .row .bar{display:none}
+  .table-head{padding:14px 20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand" aria-label="DeepAutomation AI, inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 28 10v12l-12 7-12-7V10z" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M16 10.5 21.5 13.7v6.4L16 23.3l-5.5-3.2v-6.4z" fill="#fff"/></svg>
+      DeepAutomation <span>AI</span>
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="#diferencial">Diferencial</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn" href="https://wa.me/51907054616" target="_blank" rel="noopener">Hablemos</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div>
+        <p class="label">Automatización con inteligencia artificial</p>
+        <h1 id="hero-title">El modelo correcto.<br><em>Para cada tarea.</em></h1>
+        <p class="lead">Automatizamos todo tipo de procesos con IA para empresas y personas, eligiendo entre cientos de modelos —incluidos los emergentes y especializados— la solución con mejor relación rendimiento‑precio para tu caso.</p>
+        <div class="cta">
+          <a class="btn btn-solid" href="https://wa.me/51907054616?text=Hola%20DeepAutomation%20AI%2C%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener">Solicitar diagnóstico
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn" href="#diferencial">Ver cómo trabajamos</a>
+        </div>
+      </div>
+      <svg class="geo" viewBox="0 0 400 400" role="img" aria-label="Composición geométrica que representa una red de modelos de IA">
+        <g fill="none" stroke="rgba(255,255,255,.14)">
+          <circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="130"/>
+        </g>
+        <g class="spin" fill="none" stroke="rgba(255,255,255,.35)">
+          <circle cx="200" cy="200" r="160" stroke-dasharray="2 10"/>
+          <rect x="187" y="27" width="26" height="26" transform="rotate(45 200 40)" fill="#0A0A0A"/>
+          <rect x="187" y="347" width="26" height="26" transform="rotate(45 200 360)" fill="#0A0A0A"/>
+          <circle cx="40" cy="200" r="6" fill="#fff" stroke="none"/>
+          <circle cx="360" cy="200" r="6" fill="rgba(255,255,255,.4)" stroke="none"/>
+        </g>
+        <g fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1">
+          <path d="M200 70 312.6 135v130L200 330 87.4 265V135z"/>
+          <path d="M200 70v130M312.6 265 200 200 87.4 265" stroke="rgba(255,255,255,.22)"/>
+        </g>
+        <path d="M200 150 243.3 175v50L200 250l-43.3-25v-50z" fill="#fff"/>
+        <g fill="#fff"><circle cx="200" cy="70" r="4"/><circle cx="312.6" cy="135" r="4"/><circle cx="312.6" cy="265" r="4"/><circle cx="200" cy="330" r="4"/><circle cx="87.4" cy="265" r="4"/><circle cx="87.4" cy="135" r="4"/></g>
+      </svg>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding:0">
+    <div class="stats">
+      <div class="stat"><b>24/7</b><small>Monitoreo del ecosistema de modelos</small></div>
+      <div class="stat"><b>B2B · B2C</b><small>Empresas y consumidores</small></div>
+      <div class="stat"><b>Costo óptimo</b><small>Rendimiento por cada sol invertido</small></div>
+      <div class="stat"><b>End‑to‑end</b><small>Del diagnóstico a la operación</small></div>
+    </div>
+  </div>
+
+  <section class="diff" id="diferencial" aria-labelledby="diff-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="label">Diferencial</p><h2 id="diff-title">Conocimiento que el mercado aún no tiene.</h2></div>
+        <p class="lead">Mientras la mayoría usa siempre los mismos modelos populares, nosotros encontramos la herramienta precisa —a menudo desconocida para el público— que resuelve tu problema mejor y por menos.</p>
+      </div>
+      <div class="diff-grid">
+        <article class="diff-card">
+          <span class="num">01</span>
+          <svg class="ico" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle cx="22" cy="22" r="10"/><path d="M22 4v8M22 32v8M4 22h8M32 22h8"/><circle cx="22" cy="22" r="2" fill="#fff"/></svg>
+          <h3>Radar en tiempo real</h3>
+          <p>Seguimos de forma continua todos los modelos disponibles, con foco en los emergentes y especializados que acaban de salir.</p>
+        </article>
+        <article class="diff-card">
+          <span class="num">02</span>
+          <svg class="ico" viewBox="0 0 44 44" aria-hidden="true"><path d="M4 38h36"/><path d="M8 38V26h7v12M18.5 38V16h7v22M29 38V6h7v32"/></svg>
+          <h3>Rendimiento‑precio</h3>
+          <p>Comparamos calidad, velocidad y costo para cada situación específica. Pagas por lo que realmente necesitas, no por la marca.</p>
+        </article>
+        <article class="diff-card">
+          <span class="num">03</span>
+          <svg class="ico" viewBox="0 0 44 44" aria-hidden="true"><path d="M22 4 38 13v18L22 40 6 31V13z"/><path d="M22 4v36M6 13l32 18M38 13 6 31"/></svg>
+          <h3>Comprensión profunda</h3>
+          <p>Expertos en IA que entienden cómo funcionan los sistemas inteligentes por dentro, para diseñar soluciones robustas y poco convencionales.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="radar" aria-labelledby="radar-title">
+    <div class="wrap">
+      <div>
+        <p class="label">Selección de modelos</p>
+        <h2 id="radar-title">No usamos un modelo. Usamos el adecuado.</h2>
+        <p class="lead">Cada tarea tiene su mejor herramienta. Combinamos modelos generales, especializados y de código abierto en flujos que maximizan resultados y minimizan costos.</p>
+        <ul class="checks">
+          <li>Evaluación objetiva frente a tu caso real, no benchmarks genéricos.</li>
+          <li>Arquitecturas multi‑modelo con enrutamiento inteligente.</li>
+          <li>Actualización continua cuando aparece una alternativa superior.</li>
+        </ul>
+      </div>
+      <div class="table" role="img" aria-label="Ejemplo ilustrativo de cómo asignamos un tipo de modelo a cada tarea según su eficiencia">
+        <div class="table-head"><span>Asignación por tarea · ejemplo</span><span class="live"><i></i>En vivo</span></div>
+        <div class="row"><div><div class="t">Clasificación de correos</div><div class="s">Alto volumen</div></div><div class="bar"><span style="width:92%"></span></div><span class="tag">Modelo ligero</span></div>
+        <div class="row"><div><div class="t">Extracción de facturas</div><div class="s">Documentos y visión</div></div><div class="bar"><span style="width:86%"></span></div><span class="tag">Especializado</span></div>
+        <div class="row"><div><div class="t">Atención por WhatsApp</div><div class="s">Conversacional</div></div><div class="bar"><span style="width:78%"></span></div><span class="tag">Emergente</span></div>
+        <div class="row"><div><div class="t">Análisis estratégico</div><div class="s">Razonamiento complejo</div></div><div class="bar"><span style="width:95%"></span></div><span class="tag">Frontera</span></div>
+        <div class="row"><div><div class="t">Datos sensibles</div><div class="s">Privacidad total</div></div><div class="bar"><span style="width:70%"></span></div><span class="tag">Open source</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicios" aria-labelledby="svc-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="label">Servicios</p><h2 id="svc-title">Automatizamos cualquier tarea.</h2></div>
+        <p class="lead">Si es repetitiva, lenta o costosa, probablemente la IA puede hacerla mejor. Diseñamos, implementamos y mantenemos la solución.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="13" height="13"/><rect x="23" y="4" width="13" height="13"/><rect x="4" y="23" width="13" height="13"/><rect x="23" y="23" width="13" height="13" fill="#fff"/><path d="M17 10.5h6M10.5 17v6M29.5 17v6M17 29.5h6"/></svg>
+          <div><h3>Flujos de trabajo inteligentes</h3><p>Procesos de extremo a extremo que conectan tus herramientas y toman decisiones con IA.</p></div>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 8h28v20H18l-8 6v-6H6z"/><path d="M12 16h16M12 21h10"/></svg>
+          <div><h3>Agentes y asistentes</h3><p>Atención al cliente, ventas y soporte interno por WhatsApp, web o correo, disponibles 24/7.</p></div>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10 4h14l8 8v24H10z"/><path d="M24 4v8h8M15 20h12M15 25h12M15 30h7"/></svg>
+          <div><h3>Procesamiento de documentos</h3><p>Lectura, extracción y validación de facturas, contratos, formularios e imágenes.</p></div>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 34h32"/><path d="M6 28l9-10 7 6 12-14"/><circle cx="34" cy="10" r="2" fill="#fff"/></svg>
+          <div><h3>Análisis y reportes</h3><p>Datos convertidos automáticamente en informes, alertas y recomendaciones accionables.</p></div>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="6"/><path d="M20 4v6M20 30v6M4 20h6M30 20h6M8.7 8.7l4.2 4.2M27.1 27.1l4.2 4.2M8.7 31.3l4.2-4.2M27.1 12.9l4.2-4.2"/></svg>
+          <div><h3>Consultoría y selección de modelos</h3><p>Te decimos qué modelo usar, cuándo y por qué, para reducir costos sin perder calidad.</p></div>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="6" width="28" height="28"/><path d="M6 14h28M14 14v20"/><circle cx="10" cy="10" r="1" fill="#fff"/></svg>
+          <div><h3>Automatización personal</h3><p>Organización, agenda, correo, contenido y tareas diarias resueltas por IA para personas.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="seg-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="label">Para quién</p><h2 id="seg-title">Soluciones a tu escala.</h2></div>
+        <p class="lead">La misma profundidad técnica, adaptada a una corporación o a una sola persona.</p>
+      </div>
+      <div class="seg-grid">
+        <article class="seg">
+          <p class="label">Empresas</p>
+          <h3>Operaciones más rápidas y rentables</h3>
+          <p>Reducimos costos operativos y liberamos a tu equipo para el trabajo de alto valor.</p>
+          <ul><li>Integración con tus sistemas actuales</li><li>Seguridad y privacidad de datos</li><li>Soporte y mejora continua</li></ul>
+        </article>
+        <article class="seg">
+          <p class="label">Consumidores</p>
+          <h3>Tu tiempo, de vuelta</h3>
+          <p>Automatizaciones personales simples de usar, con la potencia de la IA más avanzada.</p>
+          <ul><li>Configuración guiada</li><li>Herramientas eficientes y accesibles</li><li>Acompañamiento cercano</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="proceso" aria-labelledby="proc-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="label">Proceso</p><h2 id="proc-title">De la idea a la operación.</h2></div>
+        <p class="lead">Un método claro, medible y sin sorpresas.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="dot"><span>01</span></div><h3>Diagnóstico</h3><p>Entendemos tu proceso, objetivos y restricciones.</p></div>
+        <div class="step"><div class="dot"><span>02</span></div><h3>Selección</h3><p>Evaluamos y elegimos los modelos óptimos para cada paso.</p></div>
+        <div class="step"><div class="dot"><span>03</span></div><h3>Implementación</h3><p>Construimos, integramos y probamos la automatización.</p></div>
+        <div class="step"><div class="dot"><span>04</span></div><h3>Evolución</h3><p>Medimos y actualizamos cuando surge algo mejor.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="box">
+        <div class="l">
+          <p class="label">Contacto</p>
+          <h2 id="contact-title">¿Qué tarea quieres dejar de hacer?</h2>
+          <p class="lead">Cuéntanos tu caso y te proponemos la solución más eficiente. Sin compromiso.</p>
+        </div>
+        <div class="r">
+          <a class="channel" href="https://wa.me/51907054616" target="_blank" rel="noopener">
+            <div><small>WhatsApp</small><b>+51 907 054 616</b></div>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8"/></svg>
+          </a>
+          <a class="channel" href="tel:+51907054616">
+            <div><small>Teléfono</small><b>+51 907 054 616</b></div>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8"/></svg>
+          </a>
+          <a class="channel" href="mailto:contacto@deepautomationai.me">
+            <div><small>Email</small><b>contacto@deepautomationai.me</b></div>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> DeepAutomation AI. Todos los derechos reservados.</span>
+    <span>Automatización inteligente · Lima, Perú</span>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
